@@ -3,16 +3,13 @@ const newGridButton = document.getElementById('newGridButton')
 newGridButton.addEventListener('click', newGrid);
 
 
-function fillWithDivs(numberBoxes) {
-    for (let i = 0; i < numberBoxes; i++) {
-        container.innerHTML += `<div class='cell' id=${i}></div>`;
-    }
+function newGrid() {
+    let numberRows = prompt("How many squares per side in the new grid?", 24)
+    if (numberRows > 100) numberRows = 100;
+ //   while (container.firstChild) container.removeChild(container.firstChild);
+    container.innerHTML = '';
+    drawGrid(numberRows);
 }
-
-
-
-
-
 
 function drawGrid(size) {
     const numberRows = size;
@@ -31,11 +28,14 @@ function drawGrid(size) {
     }
 }
 
-
-function newGrid() {
-   while (container.firstChild) container.removeChild (container.firstChild);
-   
-    drawGrid(4);
+function fillWithDivs(numberBoxes) {
+    for (let i = 0; i < numberBoxes; i++) {
+        let child = document.createElement('div')
+        child.classList.add('cell');
+        child.id = (i)
+ //       container.innerHTML += `<div class='cell' id=${i}></div>`;
+        container.appendChild(child);
+}
 }
 
 drawGrid(16)
