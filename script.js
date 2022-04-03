@@ -12,3 +12,8 @@ function fillWithDivs(numberRows) {
 fillWithDivs(numberRows);
 container.style.gridTemplateColumns = `repeat(${numberRows}, auto)`
 container.style.gridTemplateRows = `repeat(${numberRows}, auto)`
+
+const target = document.getElementById('1');
+
+target.addEventListener('mouseenter', e => {
+    target.style.background = 'black';})
