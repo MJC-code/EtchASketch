@@ -1,10 +1,6 @@
 const container = document.getElementById('container');
 
-const numberRows = 16;
-
-container.style.gridTemplateColumns = `repeat(${numberRows}), 1fr)`;
-container.style.gridTemplateRows = `repeat(${numberRows}), 1fr)`;
-
+const numberRows = 25;
 
 function fillWithDivs(numberRows) {
     for (let i = 0; i < numberRows*numberRows; i++) {

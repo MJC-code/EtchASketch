@@ -1,14 +1,21 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+
 body {
     background-color: dimgray;
 }
 
 #container {
     background-color: beige;
+    border: solid red 20px;
     height: 300px;
+    border-radius: 15px;
     width: 300px;
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: repeat(20, 1fr);
+    grid-template-rows: auto;
     grid-gap: 0px;
 }
 
