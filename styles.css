@@ -1,0 +1,15 @@
+#container {
+    background-color: beige;
+    height: 300px;
+    width: 300px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-gap: 1px;
+}
+
+#container > div {
+    background-color: aqua;
+    border: solid grey 1px;
+    height: auto;
+}
