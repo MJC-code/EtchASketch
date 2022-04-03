@@ -1,13 +1,12 @@
 const container = document.getElementById('container');
 
-const numberRows = 25;
+const numberRows = 4;
 
 function fillWithDivs(numberRows) {
     for (let i = 0; i < numberRows*numberRows; i++) {
-        container.innerHTML += `<div></div>`;
+        container.innerHTML += `<div id=${i}></div>`;
     }
 }
-
 
 
 fillWithDivs(numberRows);
