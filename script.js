@@ -43,19 +43,28 @@ function fillWithDivs(numberBoxes) {
 }
 
 function setBackgroundColour(target) {
-    target.style.background = 'black';
+    if (colourStyle === 'black') {
+         target.style.background = 'black';
     return;
+    } else if (colourStyle === 'multi') {
+        const randomColor = Math.floor(Math.random()*16777215).toString(16);
+        target.style.background = "#" + randomColor;
+        return;
+    }
 }
 
 function changeColourStyle() {
     if (colourStyle === 'black') {
         colourStyle = 'shade'
+        colourButton.textContent = 'Colour mode: shading';
     } else if (colourStyle === 'shade') {
         colourStyle = 'multi'
+        colourButton.textContent = 'Colour mode: multicolour';
     } else if (colourStyle === 'multi') {
         colourStyle = 'black'
-    }
-    console.log(`Colour style changed to ${colourStyle}`)
+        colourButton.textContent = 'Colour mode: black';
+    } 
+    console.log(`Colour mode changed to ${colourStyle}`)
 }
 
 
