@@ -44,17 +44,19 @@ function fillWithDivs(numberBoxes) {
 
 function setBackgroundColour(target) {
     if (colourStyle === 'black') {
-        target.style.background = 'black';
+        target.style.background = 'rgb(0, 0, 0)';
         return;
     } else if (colourStyle === 'multi') {
         const randomColor = Math.floor(Math.random() * 16777215).toString(16);
         target.style.background = "#" + randomColor;
         return;
     } else if (colourStyle === 'erase') {
-        target.style.background = 'aqua';
+        target.style.background = '';
         return;
     } else if (colourStyle === 'shade') {
+        target.style.background = target.style.backgroundColor
         console.log(target.style.backgroundColor)
+        return;
     }
 }
 
