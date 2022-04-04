@@ -4,9 +4,13 @@ newGridButton.addEventListener('click', newGrid);
 
 
 function newGrid() {
-    let numberRows = prompt("How many squares per side in the new grid?", 24)
-    if (numberRows > 100) numberRows = 100;
- //   while (container.firstChild) container.removeChild(container.firstChild);
+    
+    
+    let numberRows = prompt("How many squares per side in the new grid? (Maximum 100)" );
+    console.log(numberRows);
+    if (numberRows == null) {return};
+    
+
     container.innerHTML = '';
     drawGrid(numberRows);
 }
@@ -33,7 +37,6 @@ function fillWithDivs(numberBoxes) {
         let child = document.createElement('div')
         child.classList.add('cell');
         child.id = (i)
- //       container.innerHTML += `<div class='cell' id=${i}></div>`;
         container.appendChild(child);
 }
 }
