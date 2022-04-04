@@ -59,9 +59,6 @@ function setBackgroundColour(target) {
             target.brightness -= 10
         }
         target.style.filter = `brightness(${target.brightness}%)`
-    //    console.log(target.style.backgroundColor)
-     //   console.log(target.style.brightness);
-     //   console.log(target.brightness)
         return;
     }
 }
