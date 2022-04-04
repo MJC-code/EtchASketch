@@ -36,7 +36,7 @@ function drawGrid(size) {
 function fillWithDivs(numberBoxes) {
     for (let i = 0; i < numberBoxes; i++) {
         let child = document.createElement('div')
-        child.classList.add('cell');
+    //    child.classList.add('cell');
         child.id = (i)
         container.appendChild(child);
     }
@@ -44,12 +44,17 @@ function fillWithDivs(numberBoxes) {
 
 function setBackgroundColour(target) {
     if (colourStyle === 'black') {
-         target.style.background = 'black';
-    return;
+        target.style.background = 'black';
+        return;
     } else if (colourStyle === 'multi') {
-        const randomColor = Math.floor(Math.random()*16777215).toString(16);
+        const randomColor = Math.floor(Math.random() * 16777215).toString(16);
         target.style.background = "#" + randomColor;
         return;
+    } else if (colourStyle === 'erase') {
+        target.style.background = 'aqua';
+        return;
+    } else if (colourStyle === 'shade') {
+        console.log(target.style.backgroundColor)
     }
 }
 
@@ -61,9 +66,12 @@ function changeColourStyle() {
         colourStyle = 'multi'
         colourButton.textContent = 'Colour mode: multicolour';
     } else if (colourStyle === 'multi') {
-        colourStyle = 'black'
+        colourStyle = 'erase';
+        colourButton.textContent = 'Colour mode: erase';
+    } else if (colourStyle = 'erase') {
+        colourStyle = 'black';
         colourButton.textContent = 'Colour mode: black';
-    } 
+    }
     console.log(`Colour mode changed to ${colourStyle}`)
 }
 
