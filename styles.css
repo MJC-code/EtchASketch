@@ -18,6 +18,9 @@ body {
     min-height: 100vh;
 }
 
+.footer {
+    height: 50px;
+}
 .drawTools {
     display:flex;
     flex-direction: column;
