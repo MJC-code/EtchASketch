@@ -27,7 +27,6 @@ function drawGrid(size) {
     for (let i = 0; i < numberBoxes; i++) {
         let target = document.getElementById(`${i}`);
         target.addEventListener('mouseenter', () => {
-            // target.style.background = 'black';
             setBackgroundColour(target)
         })
     }
@@ -36,8 +35,9 @@ function drawGrid(size) {
 function fillWithDivs(numberBoxes) {
     for (let i = 0; i < numberBoxes; i++) {
         let child = document.createElement('div')
-    //    child.classList.add('cell');
         child.id = (i)
+        child.brightness = 100
+        child.style.filter = 'brightness(100%)';
         container.appendChild(child);
     }
 }
@@ -52,10 +52,16 @@ function setBackgroundColour(target) {
         return;
     } else if (colourStyle === 'erase') {
         target.style.background = '';
+        target.style.filter = 'brightness(100%)';
         return;
     } else if (colourStyle === 'shade') {
-        target.style.background = target.style.backgroundColor
-        console.log(target.style.backgroundColor)
+        if (target.brightness > 0) {
+            target.brightness -= 10
+        }
+        target.style.filter = `brightness(${target.brightness}%)`
+    //    console.log(target.style.backgroundColor)
+     //   console.log(target.style.brightness);
+     //   console.log(target.brightness)
         return;
     }
 }
