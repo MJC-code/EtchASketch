@@ -5,6 +5,8 @@ const colourButton = document.getElementById('setColourStyle')
 colourButton.addEventListener('click', changeColourStyle)
 let colourStyle = 'black';
 
+drawGrid(16)
+
 function newGrid() {
     let numberRows = prompt("How many squares per side in the new grid? (from 2 to 100)")
     if (numberRows == null) return;
@@ -81,4 +83,3 @@ function changeColourStyle() {
 }
 
 
-drawGrid(16)
